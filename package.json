@@ -4,7 +4,8 @@
   "description": "Sudoku Game",
   "main": "src/js/index.js",
   "scripts": {
-    "test": "gulp unit"
+    "test": "gulp unit",
+    "start": "gulp"
   },
   "keywords": [
     "Sudoku"

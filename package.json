@@ -1,0 +1,31 @@
+{
+  "name": "ian-sudoku-game",
+  "version": "0.0.0",
+  "description": "Sudoku Game",
+  "main": "src/js/index.js",
+  "scripts": {
+    "test": "gulp unit"
+  },
+  "keywords": [
+    "Sudoku"
+  ],
+  "author": "Ian Morrison",
+  "license": "MIT",
+  "devDependencies": {
+    "bindpolyfill": "0.0.0",
+    "chai": "^2.1.2",
+    "gulp": "^3.8.11",
+    "gulp-connect": "^2.2.0",
+    "gulp-less": "^3.0.2",
+    "karma": "^0.12.31",
+    "karma-browserify": "^4.0.0",
+    "karma-cli": "0.0.4",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-spec-reporter": "0.0.16",
+    "mocha": "^2.2.1",
+    "phantomjs": "^1.9.16",
+    "vinyl-source-stream": "^1.1.0",
+    "yargs": "^3.6.0"
+  }
+}

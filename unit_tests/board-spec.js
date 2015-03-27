@@ -45,4 +45,10 @@ describe('Board', function() {
     expect(incorrectBoard.solved()).to.be.false;
     expect(solvedBoard.solved()).to.be.true;
   });
+
+  it('should reset a board to the original state', function() {
+    unsolvedBoard.set(4, 0, 2);
+    unsolvedBoard.reset();
+    expect(unsolvedBoard.get(0, 2)).to.equal(-1);
+  });
 });

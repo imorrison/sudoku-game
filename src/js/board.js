@@ -1,13 +1,21 @@
 'use strict';
 
+var mCopy = require('./helpers').mCopy;
 
 var Board = function(data) {
-  this.data = data;
+  this.original = data
+  this.data = mCopy(data); // mutate copy
 };
 
 Board.prototype.set = function(val, x, y) {
   this.data[x][y] = val;
+  return this;
 };
+
+
+Board.prototype.get = function(x, y) {
+  return this.data[x][y];
+}
 
 Board.prototype.validColumn = function(col) {
   var valid = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -121,5 +129,9 @@ Board.prototype.solved = function() {
   return true;
 };
 
+Board.prototype.reset = function() {
+  var cp = mCopy(this.original);
+  this.data = cp;
+};
 
 module.exports = Board;

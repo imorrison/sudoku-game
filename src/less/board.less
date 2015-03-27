@@ -1,13 +1,17 @@
 .sudoku-board {
   width: 9rem;
   margin: 0 auto;
-}
 
-.tile {
-  width: 3rem;
-  float: left;
-  outline: 2px solid @darkblue;
-  border: none;
+  > div {
+    width: 3rem;
+    float: left;
+    outline: 2px solid @darkblue;
+    border: none;
+
+    &.invalid {
+      outline: 2px solid @red;
+    }
+  }
 }
 
 input[type=number] {
@@ -22,7 +26,11 @@ input[type=number] {
   color: @blue;
  
   -moz-appearance:textfield;
- 
+
+  &.invalid {
+    outline: 1px solid @red;
+  }
+
   &:focus {
     outline-offset: 0;
   }

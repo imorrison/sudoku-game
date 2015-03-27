@@ -6,6 +6,8 @@ var toArray = helpers.toArray;
 var coordToSelector = helpers.coordToSelector;
 var datasetToCoord = helpers.datasetToCoord;
 var mForEach = helpers.mForEach;
+var set = [0, 1, 2, 3, 4, 5, 6, 7, 8];
+
 
 var Game = function(newBoardState) {
   this.board = new Board(newBoardState);
@@ -70,8 +72,13 @@ Game.prototype.listenToReset = function() {
 };
 
 Game.prototype.checkStatus = function() {
+  var sections = this.board.solved();
+  console.log(sections);
+  this.removeInvalidMarks();
+  this.markInvalidSections(sections);
+  
   if (this.board.complete()) {
-    if (this.board.solved()) {
+    if (sections.valid) {
       this.statusEl.innerHTML = '<p>you win</p>';
     } else {
       this.statusEl.innerHTML = '<p>not yet</p>';
@@ -86,5 +93,44 @@ Game.prototype.reset = function() {
   this.board.reset();
   this.render();
 };
+
+Game.prototype.markInvalidSections = function(sections) {
+  var el, selector;
+  sections.sqr.forEach(function(sqr) {
+    el = document.getElementById(sqr)
+    el.setAttribute('class', 'invalid');
+  });
+
+  sections.row.forEach(function(row) {
+    set.forEach(function(i) {
+      selector = coordToSelector(row, i);
+      el = document.querySelector(selector);
+      el.className = 'invalid';
+    });
+  });
+
+  sections.col.forEach(function(col) {
+    set.forEach(function(i) {
+      selector = coordToSelector(i, col);
+      el = document.querySelector(selector);
+      el.className = 'invalid';
+    });
+  });
+};
+
+Game.prototype.removeInvalidMarks = function() {
+  var el, selector;
+  mForEach(this.board.data, function(val, x, y) {
+    selector = coordToSelector(x, y)
+    el = document.querySelector(selector);
+    el.className === 'invalid'
+    el.className = '';
+  });
+
+  set.forEach(function(n) {
+    el = document.getElementById(n);
+    el.className = '';
+  });
+}
 
 module.exports = Game;

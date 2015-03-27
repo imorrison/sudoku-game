@@ -42,8 +42,8 @@ describe('Board', function() {
   });
 
   it('should check if the board is solved', function() {
-    expect(incorrectBoard.solved()).to.be.false;
-    expect(solvedBoard.solved()).to.be.true;
+    expect(incorrectBoard.solved().valid).to.be.false;
+    expect(solvedBoard.solved().valid).to.be.true;
   });
 
   it('should reset a board to the original state', function() {

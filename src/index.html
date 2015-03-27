@@ -11,7 +11,7 @@
   <body>
   <h1>Sudoku</h1>
   <div id="board" class="sudoku-board">
-    <div class="tile A"> 
+    <div id="0">
       <input type="number" min="1" max="9" step="1" data-coord="[0,0]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,2]" ></input>
@@ -22,7 +22,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[2,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[2,2]" ></input>
     </div>
-    <div class="tile B"> 
+    <div id="1">
       <input type="number" min="1" max="9" step="1" data-coord="[0,3]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,5]" ></input>
@@ -33,7 +33,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[2,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[2,5]" ></input>
     </div>
-    <div class="tile C"> 
+    <div id="2">
       <input type="number" min="1" max="9" step="1" data-coord="[0,6]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[0,8]" ></input>
@@ -44,7 +44,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[2,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[2,8]" ></input>
     </div>
-    <div class="tile D"> 
+    <div id="3">
       <input type="number" min="1" max="9" step="1" data-coord="[3,0]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,2]" ></input>
@@ -55,7 +55,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[5,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[5,2]" ></input>
     </div>
-    <div class="tile E"> 
+    <div id="4">
       <input type="number" min="1" max="9" step="1" data-coord="[3,3]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,5]" ></input>
@@ -65,9 +65,8 @@
       <input type="number" min="1" max="9" step="1" data-coord="[5,3]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[5,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[5,5]" ></input>
-    
     </div>
-    <div class="tile F"> 
+    <div id="5">
       <input type="number" min="1" max="9" step="1" data-coord="[3,6]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[3,8]" ></input>
@@ -78,7 +77,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[5,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[5,8]" ></input>
     </div>
-    <div class="tile G"> 
+    <div id="6">
       <input type="number" min="1" max="9" step="1" data-coord="[6,0]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,2]" ></input>
@@ -89,7 +88,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[8,1]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[8,2]" ></input>
     </div>
-    <div class="tile H"> 
+    <div id="7">
       <input type="number" min="1" max="9" step="1" data-coord="[6,3]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,5]" ></input>
@@ -100,7 +99,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[8,4]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[8,5]" ></input>
     </div>
-    <div class="tile I"> 
+    <div id="8">
       <input type="number" min="1" max="9" step="1" data-coord="[6,6]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[6,8]" ></input>
@@ -111,7 +110,7 @@
       <input type="number" min="1" max="9" step="1" data-coord="[8,7]" ></input>
       <input type="number" min="1" max="9" step="1" data-coord="[8,8]" ></input>
     </div>
-    <div id="status-box" class="status"></div>
+    <span id="status-box" class="status"></span>
     <button id="validate">Check</button>
     <button id="clear">Clear</button>
   </div>  

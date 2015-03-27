@@ -116,18 +116,34 @@ Board.prototype.complete = function() {
 
 Board.prototype.solved = function() {
   var row, col, sqr;
+  var invalidSections = {
+    row: [],
+    col: [],
+    sqr: [],
+    valid: true
+  };
 
   for (var i = 0; i < this.data.length; i++) {
     row = this.validRow(i);
     col = this.validColumn(i);
     sqr = this.validSquare(i);
-
-    if (!(row && col && sqr)) {
-      return false;
+ 
+    if (!row) {
+      invalidSections.row.push(i);
     }
+    if (!col) {
+      invalidSections.col.push(i);
+    }
+    if (!sqr) {
+      invalidSections.sqr.push(i);
+    }
+
   }
 
-  return true;
+  if (invalidSections.row.length || invalidSections.col.length || invalidSections.sqr.length) {
+    invalidSections.valid = false;
+  }
+  return invalidSections;
 };
 
 Board.prototype.reset = function() {

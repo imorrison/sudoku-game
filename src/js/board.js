@@ -2,6 +2,7 @@
 
 var mCopy = require('./helpers').mCopy;
 
+
 var Board = function(data) {
   this.original = data
   this.data = mCopy(data); // mutate copy

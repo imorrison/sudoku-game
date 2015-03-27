@@ -8,7 +8,7 @@ var source = require('vinyl-source-stream');
 var karma = require('karma');
 var argv = require('yargs').argv;
 var path = require('path');
-
+var ghPages = require('gulp-gh-pages');
 
 gulp.task('buildjs', function() {
   return browserify('./src/js/index.js')
@@ -55,6 +55,11 @@ gulp.task('unit', function(done) {
   karma.server.start({
     configFile: path.join(__dirname, '/karma.unit.conf.js'),
   }, done);
+});
+
+gulp.task('deploy', function() {
+  gulp.src('./build/sudoku/**/*')
+    .pipe(ghPages());
 });
 
 

@@ -239,7 +239,6 @@ Game.prototype.onChange = function(event) {
   }
 
   this.board.set(value, coord[0], coord[1]);
-  this.checkStatus();
 };
 
 Game.prototype.listenToCheck = function() {
@@ -272,6 +271,7 @@ Game.prototype.checkStatus = function() {
 Game.prototype.reset = function() {
   this.statusEl.innerHTML = '';
   this.board.reset();
+  this.removeInvalidMarks();
   this.render();
 };
 

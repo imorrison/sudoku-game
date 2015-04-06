@@ -9,8 +9,8 @@ var Board = function(data) {
 };
 
 Board.prototype.set = function(val, x, y) {
+  val = Number(val);
   this.data[x][y] = val;
-  return this;
 };
 
 
